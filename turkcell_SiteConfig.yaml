@@ -1,0 +1,152 @@
+---
+apiVersion: "ran.openshift.io/v1"
+kind: "SiteConfig"
+metadata:
+  name: "anucp-cluster"
+  namespace: "turkcell"
+spec:
+  baseDomain: "odine.com"
+  clusterImageSetNameRef: "exampleImageRef"
+  sshPublicKey: "ssh AASFDSGRSSFDHFHFGFHDFHDFHDH root"
+  pullSecretRef:
+    name: "secret-key-example"
+  clusters:
+  - clusterName: "anucp2toucp"
+    extraManifestPath: "source/config/manifests"
+    extraManifests:
+      filter:
+        inclusionDefault: "exclude"
+        include:
+        - "deployment-manifest"
+    networkType: "OVNKubernetes"
+    clusterLabels:
+      location: "ankara"
+    clusterNetwork:
+    - cidr: "10.10.55.130/24"
+      hostPrefix: 16
+    machineNetwork:
+    - cidr: "10.10.55.131/24"
+    apiVIP: "12.1.3.45"
+    ingressVIP: "10.1.12.133"
+    serviceNetwork:
+    - "10.10.30.40/8"
+    additionalNTPSources:
+    - "100.12.55.130"
+    nodes:
+    - hostName: "master01.odine.com"
+      role: "master"
+      bmcAddress: "/redfish/v1/Systems/<System.Embedded.1/EthernetInterfaces/NIC.Slot.1-2-1"
+      bmcCredentialsName:
+        name: "bmc-credentials-0"
+      nodeLabels:
+        mode: "master"
+      bootMode: "UEFI"
+      rootDeviceHints:
+        vendor: "HP"
+        deviceName: "dev/sda"
+        size: 500
+      bootMACAddress: "9e:8e:6d:9c:23:53"
+      nodeNetwork:
+        interfaces:
+        - name: "ens130f"
+          macAddress: "9e:8e:6d:9c:23:53"
+        - name: "ens45f"
+          macAddress: "79:81:5e:d0:9b:98"
+        config:
+          interfaces:
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "ens130f"
+            state: "up"
+            type: "ethernet"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "ens45f"
+            state: "up"
+            type: "ethernet"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            link-aggregation:
+              mode: "active-backup"
+              port:
+              - "ens130f"
+              options:
+                miimon: "100"
+            ipv6:
+              enabled: false
+            name: "bond0"
+            description: "Bond 0"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond0"
+              id: 400
+            ipv4:
+              address:
+                prefix-length: "12"
+                ip: "192.168.65.24"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "bond0.400"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond0"
+              id: 401
+            ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "bond0.401"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "bond1"
+            description: "Bond 1"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond1"
+              id: 402
+            ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "bond1.402"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond1"
+              id: 403
+            ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "bond1.403"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          dns-resolver:
+            config:
+              server:
+              - "8.8.8.8"
+          routes:
+            config:
+            - next-hop-interface: "bond0.400"
+              destination: "0.0.0.0/0"
+              next-hop-address: "192.168.65.24"
