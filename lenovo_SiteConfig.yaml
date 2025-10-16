@@ -37,7 +37,7 @@ spec:
       role: "master"
       bmcAddress: "/redfish/v1/Systems/<System.Embedded.1/EthernetInterfaces/NIC.Slot.1-2-1"
       bmcCredentialsName:
-        name: "bmc-credentials-0"
+        name: "bmcCredentials"
       nodeLabels:
         mode: "master"
       bootMode: "UEFI"
