@@ -1,0 +1,145 @@
+---
+apiVersion: "ran.openshift.io/v1"
+kind: "SiteConfig"
+metadata:
+  name: "ahmet-kagan-prod"
+  namespace: "ahmet-test-again"
+spec:
+  baseDomain: "example.com"
+  clusterImageSetNameRef: "default-image:latest"
+  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ..."
+  pullSecretRef:
+    name: "default-secret"
+  clusters:
+  - clusterName: "ahmet-kagan-prod"
+    extraManifestPath: "/manifests"
+    extraManifests:
+      filter:
+        inclusionDefault: "exclude"
+        include:
+        - "default-manifest.yaml"
+    networkType: "OVNKubernetes"
+    clusterLabels:
+      environment: "production"
+    clusterNetwork:
+    - cidr: "10.128.0.0/14"
+      hostPrefix: 24
+    machineNetwork:
+    - cidr: "192.168.1.0/24"
+    apiVIP: "192.168.1.101"
+    ingressVIP: "192.168.1.100"
+    serviceNetwork:
+    - "172.30.0.0/16"
+    additionalNTPSources:
+    - "pool.ntp.org"
+    nodes:
+    - hostName: "node-1.example.com"
+      role: "worker"
+      bmcAddress: "/redfish/v1/Systems/System.Embedded.1"
+      bmcCredentialsName:
+        name: "default-credentials"
+      nodeLabels:
+        role: "worker"
+      bootMode: "UEFI"
+      rootDeviceHints:
+        vendor: "Dell"
+        deviceName: "/dev/sda"
+        size: 500
+      bootMACAddress: "00:00:00:00:00:00"
+      nodeNetwork:
+        interfaces:
+        - name: "eth0"
+          macAddress: "00:00:00:00:00:00"
+        config:
+          interfaces:
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "eth0"
+            state: "up"
+            type: "ethernet"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "bond0"
+            description: "Bond interface 0"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond0"
+              id: 100
+            ipv4:
+              address:
+                prefix-length: "24"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "bond0.100"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond0"
+              id: 100
+            ipv4:
+              address:
+                prefix-length: "24"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "bond0.100"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "bond0"
+            description: "Bond interface 0"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond0"
+              id: 100
+            ipv4:
+              address:
+                prefix-length: "24"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "bond0.100"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond0"
+              id: 100
+            ipv4:
+              address:
+                prefix-length: "24"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "bond0.100"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          dns-resolver:
+            config:
+              server:
+              - "8.8.8.8"
+          routes:
+            config:
+            - next-hop-interface: "eth0"
+              destination: "0.0.0.0/0"
+              next-hop-address: "192.168.1.1"
