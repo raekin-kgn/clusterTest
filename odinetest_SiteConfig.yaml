@@ -42,7 +42,7 @@ spec:
         mode: "master"
       bootMode: "UEFI"
       rootDeviceHints:
-        vendor: "HP"
+        vendor: "Western Digital"
         deviceName: "dev/sda"
         size: 500
       bootMACAddress: "9e:8e:6d:9c:23:53"
