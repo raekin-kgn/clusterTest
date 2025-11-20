@@ -49,5 +49,4 @@
   \            type: \"vlan\"\n            mtu: 9000\n          dns-resolver:\n  \
   \          config:\n              server:\n              - \"8.8.8.8\"\n       \
   \   routes:\n            config:\n            - next-hop-interface: \"bond0.400\"\
-  \n              destination: \"0.0.0.0/0\"\n              next-hop-address: \"192.168.65.24\"\
-  \n"
+  \n              destination: \"0.0.0.0/0\"\n              next-hop-address: \"192.168.65.24\""
