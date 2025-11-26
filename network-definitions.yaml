@@ -1,0 +1,82 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: ems-mgmt-net  # Hata veren eksik ağ
+  namespace: default
+spec:
+  config: '{
+      "cniVersion": "0.3.1",
+      "type": "bridge",
+      "bridge": "br-ems",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "10.212.244.2/24",
+        "gateway": "10.212.244.1"
+      }
+    }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: management-net # Ribbon_Fixed_Management için
+  namespace: default
+spec:
+  config: '{
+      "cniVersion": "0.3.1",
+      "type": "bridge",
+      "bridge": "br-mgmt",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "10.212.246.2/24",
+        "gateway": "10.212.246.1"
+      }
+    }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: ha-net # Ribbon_Fixed_Internal için
+  namespace: default
+spec:
+  config: '{
+      "cniVersion": "0.3.1",
+      "type": "bridge",
+      "bridge": "br-ha",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "10.212.247.192/27"
+      }
+    }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: pkt0-net # Ribbon_Pkt_01 için
+  namespace: default
+spec:
+  config: '{
+      "cniVersion": "0.3.1",
+      "type": "bridge",
+      "bridge": "br-pkt0",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "169.254.0.2/16",
+        "gateway": "169.254.0.1"
+      }
+    }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: pkt1-net # Ribbon_Pkt_02 için
+  namespace: default
+spec:
+  config: '{
+      "cniVersion": "0.3.1",
+      "type": "bridge",
+      "bridge": "br-pkt1",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "169.254.0.1/16"
+      }
+    }'
