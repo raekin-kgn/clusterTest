@@ -1,0 +1,54 @@
+apiVersion: vnf.odine.com/v1alpha1
+kind: NetworkProfile
+metadata:
+  name: ribbon-networks
+  namespace: default
+spec:
+  networks:
+    # 1. Yönetim Ağı (Sabit IP'li)
+    # isbc.env ve psx_master.env içinde kullanılmış
+    "Ribbon_Fixed_Management":
+      type: "multus"
+      # Cluster'da yaratmanız gereken NetworkAttachmentDefinition ismi:
+      networkAttachmentName: "management-net"
+      # Gateway: 10.212.246.1, Prefix: 24 (Env dosyasından çıkarıldı)
+      cidr: "10.212.246.0/24"
+      gateway: "10.212.246.1"
+      interfaceName: "eth0"
+
+    # 2. Internal / HA Ağı
+    # isbc.env: Gateway 10.212.247.193, Prefix 27
+    "Ribbon_Fixed_Internal":
+      type: "multus"
+      networkAttachmentName: "ha-net"
+      # 193 gateway ise network adresi muhtemelen 192'dir (/27 subneti için)
+      cidr: "10.212.247.192/27"
+      gateway: "10.212.247.193"
+      interfaceName: "eth1"
+
+    # 3. Paket Ağı 0 (Data Plane)
+    # isbc.env: Gateway 169.254.0.1, Prefix 16
+    "Ribbon_Pkt_01":
+      type: "multus"
+      networkAttachmentName: "pkt0-net"
+      cidr: "169.254.0.0/16"
+      gateway: "169.254.0.1"
+      # Bu ağ isbc.yaml içinde 'binding:vnic_type: direct' ile kullanılmış (SR-IOV)
+      interfaceName: "eth2"
+
+    # 4. Paket Ağı 1 (Data Plane)
+    "Ribbon_Pkt_02":
+      type: "multus"
+      networkAttachmentName: "pkt1-net"
+      cidr: "169.254.0.0/16"
+      gateway: "169.254.0.1"
+      interfaceName: "eth3"
+
+    # 5. Alternatif Yönetim Ağı (EMS için)
+    # ems.env dosyasında farklı bir yönetim ağı var
+    "Ribbon_Management":
+      type: "multus"
+      networkAttachmentName: "ems-mgmt-net"
+      cidr: "10.212.244.0/24"
+      gateway: "10.212.244.1"
+      interfaceName: "eth4"

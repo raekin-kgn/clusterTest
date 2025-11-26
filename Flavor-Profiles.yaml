@@ -1,0 +1,42 @@
+apiVersion: vnf.odine.com/v1alpha1
+kind: FlavorProfile
+metadata:
+  name: ribbon-flavors
+  namespace: default
+spec:
+  flavors:
+    # EMS Node (Environment dosyasından: ribbon_EMS)
+    # Genellikle yüksek kaynak gerektirir.
+    "ribbon_ems":
+      vcpu: 4
+      memory: "1Gi"
+      disk: "10Gi"
+
+    # PSX Node (Environment dosyasından: ribbon_PSX)
+    "ribbon_psx":
+      vcpu: 4
+      memory: "2Gi"
+      disk: "20Gi"
+
+    # OAM Node (YAML default değerinden: OAM_4Vcpu_16GB_80GB_perf)
+    # İsimden özellikleri anlaşılıyor.
+    "OAM_4Vcpu_16GB_80GB_perf":
+      vcpu: 4
+      memory: "3Gi"
+      disk: "30Gi"
+
+    # Fallback / Default Flavor (YAML default: psx.small)
+    "psx.small":
+      vcpu: 2
+      memory: "1Gi"
+      disk: "20Gi"
+
+    # Standart OpenStack flavorları (Varsa diye ekledim)
+    "m1.small":
+      vcpu: 1
+      memory: "2Gi"
+      disk: "20Gi"
+    "m1.medium":
+      vcpu: 2
+      memory: "4Gi"
+      disk: "40Gi"
