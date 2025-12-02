@@ -15,3 +15,23 @@ spec:
       memory: "8Gi"
       disk: "40Gi"
 
+    "m1.medium":
+      vcpu: 4
+      memory: "8Gi"
+      disk: "40Gi"
+
+    "OAM_4Vcpu_16GB_80GB_perf":
+      vcpu: 4
+      memory: "8Gi"
+      disk: "40Gi"
+
+    "ribbon_ems":
+      vcpu: 4
+      memory: "8Gi"
+      disk: "40Gi"
+
+    "ribbon_psx":
+      vcpu: 4
+      memory: "8Gi"
+      disk: "40Gi"
+
