@@ -2,7 +2,7 @@ apiVersion: vnf.odine.com/v1alpha1
 kind: NetworkProfile
 metadata:
   name: ribbon-networks-argo
-  namespace: vnf-h2k
+  namespace: default
 spec:
   networks:
     "Ribbon_Fixed_Management":
