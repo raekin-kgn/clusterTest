@@ -2,7 +2,7 @@ apiVersion: vnf.odine.com/v1alpha1
 kind: FlavorProfile
 metadata:
   name: ribbon-flavors-argo
-  namespace: vnf-h2k
+  namespace: default
 spec:
   flavors:
     "m1.small":
