@@ -1,0 +1,20 @@
+apiVersion: vnf.odine.com/v1alpha1
+kind: VNFPackage
+metadata:
+  name: ribbon-vnf-package-argo
+  namespace: vnf-h2k
+spec:
+  packageFormat: heat
+  source:
+    configMapRef:
+      name: ribbon-test-argo
+      namespace: vnf-h2k
+  infrastructure:
+    flavorProfile: ribbon-flavors-argo
+    networkProfile: ribbon-networks-argo
+  components:
+    enabled:
+      - ems
+      - isbc
+      - psx_master
+      - slb1
