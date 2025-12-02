@@ -1,0 +1,21 @@
+apiVersion: vnf.odine.com/v1alpha1
+kind: NetworkProfile
+metadata:
+  name: ribbon-networks-argo
+  namespace: vnf-h2k
+spec:
+  networks:
+    "Ribbon_Fixed_Management":
+      type: "multus"
+      networkAttachmentName: "management-net"
+      cidr: "10.212.246.0/24"
+      gateway: "10.212.246.1"
+      interfaceName: "eth0"
+
+    "Ribbon_Fixed_Internal":
+      type: "multus"
+      networkAttachmentName: "ha-net"
+      cidr: "10.212.247.192/27"
+      gateway: "10.212.247.193"
+      interfaceName: "eth1"
+
