@@ -2,13 +2,13 @@ apiVersion: vnf.odine.com/v1alpha1
 kind: VNFPackage
 metadata:
   name: ribbon-vnf-package-argo
-  namespace: vnf-h2k
+  namespace: default
 spec:
   packageFormat: heat
   source:
     configMapRef:
       name: ribbon-test-argo
-      namespace: vnf-h2k
+      namespace: default
   infrastructure:
     flavorProfile: ribbon-flavors-argo
     networkProfile: ribbon-networks-argo
