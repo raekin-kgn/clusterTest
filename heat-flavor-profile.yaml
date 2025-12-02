@@ -1,0 +1,17 @@
+apiVersion: vnf.odine.com/v1alpha1
+kind: FlavorProfile
+metadata:
+  name: ribbon-flavors-argo
+  namespace: vnf-h2k
+spec:
+  flavors:
+    "m1.small":
+      vcpu: 1
+      memory: "2Gi"
+      disk: "10Gi"
+
+    "m1.big":
+      vcpu: 4
+      memory: "8Gi"
+      disk: "40Gi"
+
