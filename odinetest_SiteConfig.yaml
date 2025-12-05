@@ -30,6 +30,7 @@ spec:
     ingressVIP: "10.1.12.133"
     serviceNetwork:
     - "10.10.31.40/8"
+    - "10.10.31.40/9"
     additionalNTPSources:
     - "100.12.55.130"
     nodes:
@@ -42,7 +43,7 @@ spec:
         mode: "true"
       bootMode: "UEFI"
       rootDeviceHints:
-        vendor: "Western Digital"
+        vendor: "Unknown"
         deviceName: "dev/sda"
         size: 500
       bootMACAddress: "9e:8e:6d:9c:23:53"
