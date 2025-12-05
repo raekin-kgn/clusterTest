@@ -41,9 +41,9 @@ spec:
         name: "bmc-credentials-0"
       nodeLabels:
         openshift-storage: "true"
-      bootMode: "UEFISecureBoot"
+      bootMode: "legacy"
       rootDeviceHints:
-        vendor: "Unknown"
+        vendor: "Netas"
         deviceName: "/dev/sdfsdf"
         size: 24
       bootMACAddress: "40:A6:B7:88:84:5C"
