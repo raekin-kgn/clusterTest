@@ -291,6 +291,230 @@ spec:
             state: "up"
             type: "vlan"
             mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
           - ipv4:
               enabled: false
             link-aggregation:
@@ -530,12 +754,693 @@ spec:
             state: "up"
             type: "vlan"
             mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 1"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 1.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "sam-bond 2"
+            description: "sadasdas"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          - vlan:
+              base-iface: "sam-bond 2"
+              id: 2
+            ipv4:
+              address:
+                prefix-length: "26"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "sam-bond 2.2"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
           dns-resolver:
             config:
               server:
               - "26.26.26.26"
           routes:
             config:
-            - next-hop-interface: "sam-bond 1.2"
+            - next-hop-interface: "sam-bond 2.2"
               destination: "0.0.0.0/0"
               next-hop-address: "192.168.1.1"
