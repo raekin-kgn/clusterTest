@@ -2,8 +2,8 @@
 apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
-  name: "sam-name"
-  namespace: "sam-001"
+  name: "sam-nameasdasdas"
+  namespace: "sam-001asdasdasd"
 spec:
   baseDomain: "sam-domain.com"
   clusterImageSetNameRef: "sam-image-001"
@@ -19,7 +19,8 @@ spec:
         include:
         - "sam-extra.yaml"
     networkType: "OVNKubernetes"
-    clusterLabels: {}
+    clusterLabels:
+      location: "ankara1232"
     clusterNetwork:
     - cidr: "192.168.1.0/26"
       hostPrefix: 24
@@ -81,20 +82,6 @@ spec:
             state: "up"
             type: "vlan"
             mtu: 9000
-          - vlan:
-              base-iface: "sam-bond"
-              id: 3
-            ipv4:
-              address:
-                prefix-length: "27"
-                ip: "192.168.1.1"
-              enabled: true
-            ipv6:
-              enabled: false
-            name: "sam-bond.3"
-            state: "up"
-            type: "vlan"
-            mtu: 9000
           - ipv4:
               enabled: false
             link-aggregation:
@@ -124,63 +111,12 @@ spec:
             state: "up"
             type: "vlan"
             mtu: 9000
-          - vlan:
-              base-iface: "sam-bond 1"
-              id: 3
-            ipv4:
-              address:
-                prefix-length: "27"
-                ip: "192.168.1.1"
-              enabled: true
-            ipv6:
-              enabled: false
-            name: "sam-bond 1.3"
-            state: "up"
-            type: "vlan"
-            mtu: 9000
-          - ipv4:
-              enabled: false
-            ipv6:
-              enabled: false
-            name: "sam-bond 2"
-            description: "sadasdas"
-            state: "up"
-            type: "bond"
-            mtu: 9000
-          - vlan:
-              base-iface: "sam-bond 2"
-              id: 2
-            ipv4:
-              address:
-                prefix-length: "26"
-                ip: "192.168.1.1"
-              enabled: true
-            ipv6:
-              enabled: false
-            name: "sam-bond 2.2"
-            state: "up"
-            type: "vlan"
-            mtu: 9000
-          - vlan:
-              base-iface: "sam-bond 2"
-              id: 3
-            ipv4:
-              address:
-                prefix-length: "27"
-                ip: "192.168.1.1"
-              enabled: true
-            ipv6:
-              enabled: false
-            name: "sam-bond 2.3"
-            state: "up"
-            type: "vlan"
-            mtu: 9000
           dns-resolver:
             config:
               server:
               - "26.26.26.26"
           routes:
             config:
-            - next-hop-interface: "sam-bond 2.3"
+            - next-hop-interface: "sam-bond 1.2"
               destination: "0.0.0.0/0"
               next-hop-address: "192.168.1.1"
