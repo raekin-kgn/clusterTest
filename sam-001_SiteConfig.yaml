@@ -2,10 +2,10 @@
 apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
-  name: "sam-nameasdasdas"
-  namespace: "sam-001asdasdasd"
+  name: "richard-name"
+  namespace: "richard-001"
 spec:
-  baseDomain: "sam-domain.com"
+  baseDomain: "richard-domain.com"
   clusterImageSetNameRef: "sam-image-001"
   sshPublicKey: "samdslfjsdkjfklsdjfkjsdklfsdfks"
   pullSecretRef:
