@@ -2,22 +2,22 @@
 apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
-  name: "kaan-tamer-name"
-  namespace: "kaan-tamer-001"
+  name: "steve-name"
+  namespace: "steve-001"
 spec:
-  baseDomain: "kaan-tamer-domain.com"
-  clusterImageSetNameRef: "kaan-tamer-image-001"
-  sshPublicKey: "samdslfjsdkjfklsdjfkjsdklfsdfks"
+  baseDomain: "steve-domain.com"
+  clusterImageSetNameRef: "steve-image-001"
+  sshPublicKey: "stevedslfjsdkjfklsdjfkjsdklfsdfks"
   pullSecretRef:
-    name: "kaan-tamer-secret"
+    name: "steve-secret"
   clusters:
-  - clusterName: "kaan-tamer-name"
-    extraManifestPath: "/kaan-tamer/path"
+  - clusterName: "steve-name"
+    extraManifestPath: "/steve/path"
     extraManifests:
       filter:
         inclusionDefault: "exclude"
         include:
-        - "kaan-tamer-extra.yaml"
+        - "steve-extra.yaml"
     networkType: "OVNKubernetes"
     clusterLabels:
       location: "ankara1232"
@@ -36,17 +36,17 @@ spec:
     - "172.34.23.35.35"
     - "172.34.23.35.36"
     nodes:
-    - hostName: "sam-hostname"
+    - hostName: "steve-hostname"
       role: "master"
-      bmcAddress: "sam-bare-address"
+      bmcAddress: "steve-bare-address"
       bmcCredentialsName:
-        name: "sam-bare-credentails"
+        name: "steve-bare-credentails"
       nodeLabels:
         openshift-storage: "true"
       bootMode: "legacy"
       rootDeviceHints:
         vendor: "Micron"
-        deviceName: "sam-device name"
+        deviceName: "steve-device name"
         size: 2626
       bootMACAddress: "40:A6:B7:88:84:26"
       nodeNetwork:
