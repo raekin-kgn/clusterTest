@@ -20,7 +20,7 @@ spec:
         - "sam-extra.yaml"
     networkType: "OVNKubernetes"
     clusterLabels:
-      location: "ankara"
+      location: "ankara1232"
     clusterNetwork:
     - cidr: "192.168.1.0/26"
       hostPrefix: 24
