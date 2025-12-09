@@ -2,22 +2,22 @@
 apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
-  name: "steve-name"
-  namespace: "steve-001"
+  name: "sam-nameasdasdasdasdasdasdasdasd"
+  namespace: "sam-001"
 spec:
-  baseDomain: "steve-domain.com"
-  clusterImageSetNameRef: "steve-image-001"
-  sshPublicKey: "stevedslfjsdkjfklsdjfkjsdklfsdfks"
+  baseDomain: "sam-domain.com"
+  clusterImageSetNameRef: "sam-image-001"
+  sshPublicKey: "samdslfjsdkjfklsdjfkjsdklfsdfks"
   pullSecretRef:
-    name: "steve-secret"
+    name: "sam-secret"
   clusters:
-  - clusterName: "steve-name"
-    extraManifestPath: "/steve/path"
+  - clusterName: "sam-name"
+    extraManifestPath: "/sam/path"
     extraManifests:
       filter:
         inclusionDefault: "exclude"
         include:
-        - "steve-extra.yaml"
+        - "sam-extra.yaml"
     networkType: "OVNKubernetes"
     clusterLabels:
       location: "ankara1232"
@@ -36,17 +36,17 @@ spec:
     - "172.34.23.35.35"
     - "172.34.23.35.36"
     nodes:
-    - hostName: "steve-hostname"
+    - hostName: "sam-hostname"
       role: "master"
-      bmcAddress: "steve-bare-address"
+      bmcAddress: "sam-bare-address"
       bmcCredentialsName:
-        name: "steve-bare-credentails"
+        name: "sam-bare-credentails"
       nodeLabels:
         openshift-storage: "true"
       bootMode: "legacy"
       rootDeviceHints:
         vendor: "Micron"
-        deviceName: "steve-device name"
+        deviceName: "sam-device name"
         size: 2626
       bootMACAddress: "40:A6:B7:88:84:26"
       nodeNetwork:
