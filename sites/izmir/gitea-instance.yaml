@@ -21,6 +21,7 @@ spec:
     networkType: "OVNKubernetes"
     clusterLabels:
       test: "test"
+      test2: "Ankara"
     clusterNetwork:
     - cidr: "192.168.1.0/2"
       hostPrefix: 24
@@ -41,6 +42,7 @@ spec:
       nodeLabels:
         ahmet-storage: "asdasdasdasfgd"
         asdasdas: "gdsfsdfdsgdfgdfgdfg"
+        tamer: "izmir"
       bootMode: "UEFISecureBoot"
       rootDeviceHints:
         vendor: "Avago"
