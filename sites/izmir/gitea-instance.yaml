@@ -2,8 +2,8 @@
 apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
-  name: "prod-cluster"
-  namespace: "gitea-instance"
+  name: "kaan-tamer-cluster"
+  namespace: "kaan-tamer-cluster-instance"
 spec:
   baseDomain: "test.com"
   clusterImageSetNameRef: "cluste-img-1"
@@ -11,7 +11,7 @@ spec:
   pullSecretRef:
     name: "key-reference/"
   clusters:
-  - clusterName: "prod-cluster"
+  - clusterName: "kaan-tamer-cluster"
     extraManifestPath: "/path"
     extraManifests:
       filter:
