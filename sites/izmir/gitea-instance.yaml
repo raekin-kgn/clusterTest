@@ -39,7 +39,8 @@ spec:
       bmcCredentialsName:
         name: "bmc-seceet"
       nodeLabels:
-        openshift-storage: "true"
+        ahmet-storage: "asdasdasdasfgd"
+        asdasdas: "gdsfsdfdsgdfgdfgdfg"
       bootMode: "UEFISecureBoot"
       rootDeviceHints:
         vendor: "Avago"
