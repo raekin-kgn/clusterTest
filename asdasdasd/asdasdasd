@@ -1,0 +1,90 @@
+---
+apiVersion: "ran.openshift.io/v1"
+kind: "SiteConfig"
+metadata:
+  name: "dsfsdfsdf"
+  namespace: "asdsadasd"
+spec:
+  baseDomain: "asdasdasd.com"
+  clusterImageSetNameRef: "asdasd"
+  sshPublicKey: "asdasdasdasdas"
+  pullSecretRef:
+    name: "asdasdasdasd"
+  clusters:
+  - clusterName: "dsfsdfsdf"
+    extraManifestPath: "asdasdasd"
+    extraManifests:
+      filter:
+        inclusionDefault: "exclude"
+        include:
+        - "asdasdasd"
+    networkType: "OVNKubernetes"
+    clusterLabels:
+      asdasdas: "asdasdasd"
+    clusterNetwork:
+    - cidr: "192.168.1.0/24"
+      hostPrefix: 24
+    machineNetwork:
+    - cidr: "192.168.1.0/24"
+    apiVIP: "192.168.1.1"
+    ingressVIP: "192.168.1.1"
+    serviceNetwork:
+    - "192.168.1.1/24"
+    additionalNTPSources:
+    - "192.168.1.1"
+    nodes:
+    - hostName: "asdasdasd"
+      role: "master"
+      bmcAddress: "asdasdasd"
+      bmcCredentialsName:
+        name: "asdasdasdas"
+      nodeLabels:
+        asdasd: "asdasdasd"
+      bootMode: "legacy"
+      rootDeviceHints:
+        vendor: "Samsung"
+        deviceName: "asdasda"
+        size: 324
+      bootMACAddress: "40:A6:B7:88:84:5C"
+      nodeNetwork:
+        interfaces: []
+        config:
+          interfaces:
+          - ipv4:
+              enabled: false
+            link-aggregation:
+              mode: "balance-xor"
+              port:
+              - "sadasdasdasd"
+              options:
+                miimon: "100"
+            ipv6:
+              enabled: false
+            name: "asd"
+            description: "asdasdasd"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "asd"
+              id: 402
+            ipv4:
+              address:
+                prefix-length: "24"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "asd.402"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          dns-resolver:
+            config:
+              server:
+              - "192.168.1.1"
+          routes:
+            config:
+            - next-hop-interface: "as34234"
+              destination: "0.0.0.0/0"
+              next-hop-address: "192.168.1.1"
