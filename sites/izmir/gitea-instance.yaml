@@ -1,0 +1,100 @@
+---
+apiVersion: "ran.openshift.io/v1"
+kind: "SiteConfig"
+metadata:
+  name: "prod-cluster"
+  namespace: "gitea-instance"
+spec:
+  baseDomain: "test.com"
+  clusterImageSetNameRef: "cluste-img-1"
+  sshPublicKey: "ssh hdhdghfghfghfghfghfg"
+  pullSecretRef:
+    name: "key-reference/"
+  clusters:
+  - clusterName: "prod-cluster"
+    extraManifestPath: "/path"
+    extraManifests:
+      filter:
+        inclusionDefault: "exclude"
+        include:
+        - "main.yaml"
+    networkType: "OVNKubernetes"
+    clusterLabels:
+      test: "test"
+    clusterNetwork:
+    - cidr: "192.168.1.0/2"
+      hostPrefix: 24
+    machineNetwork:
+    - cidr: "192.168.1.0/2"
+    apiVIP: "192.168.1.0"
+    ingressVIP: "192.168.1.0"
+    serviceNetwork:
+    - "10.0.0.0/24"
+    additionalNTPSources:
+    - "192.168.1.0"
+    nodes:
+    - hostName: "test.com"
+      role: "worker"
+      bmcAddress: "192.168.1.0"
+      bmcCredentialsName:
+        name: "bmc-seceet"
+      nodeLabels:
+        openshift-storage: "true"
+      bootMode: "UEFISecureBoot"
+      rootDeviceHints:
+        vendor: "Avago"
+        deviceName: "/dev/sda"
+        size: 90
+      bootMACAddress: "40:A6:B7:88:84:5C"
+      nodeNetwork:
+        interfaces:
+        - name: "ens01"
+          macAddress: "40:A6:B7:88:84:5C"
+        config:
+          interfaces:
+          - ipv4:
+              enabled: false
+            ipv6:
+              enabled: false
+            name: "ens01"
+            state: "up"
+            type: "ethernet"
+            mtu: 9000
+          - ipv4:
+              enabled: false
+            link-aggregation:
+              mode: "balance-rr"
+              port:
+              - "ens01: 40:A6:B7:88:84:5C"
+              options:
+                miimon: "100"
+            ipv6:
+              enabled: false
+            name: "bond1"
+            description: "bond1"
+            state: "up"
+            type: "bond"
+            mtu: 9000
+          - vlan:
+              base-iface: "bond1"
+              id: 401
+            ipv4:
+              address:
+                prefix-length: "24"
+                ip: "192.168.1.1"
+              enabled: true
+            ipv6:
+              enabled: false
+            name: "bond1.401"
+            state: "up"
+            type: "vlan"
+            mtu: 9000
+          dns-resolver:
+            config:
+              server:
+              - "7.7.7.7"
+          routes:
+            config:
+            - next-hop-interface: "bond1.401"
+              destination: "0.0.0.0/0"
+              next-hop-address: "192.168.1.1"
