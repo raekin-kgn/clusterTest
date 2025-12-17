@@ -21,7 +21,6 @@ spec:
     networkType: "OVNKubernetes"
     clusterLabels:
       test: "test"
-      test2: "Ankara"
     clusterNetwork:
     - cidr: "192.168.1.0/2"
       hostPrefix: 24
@@ -40,9 +39,8 @@ spec:
       bmcCredentialsName:
         name: "bmc-seceet"
       nodeLabels:
-        ahmet-storage: "asdasdasdasfgd"
-        asdasdas: "gdsfsdfdsgdfgdfgdfg"
-        tamer: "izmir"
+        openshift-storage: "true"
+        mode: "cnf"
       bootMode: "UEFISecureBoot"
       rootDeviceHints:
         vendor: "Avago"
@@ -89,43 +87,6 @@ spec:
             ipv6:
               enabled: false
             name: "bond1.401"
-            state: "up"
-            type: "vlan"
-            mtu: 9000
-          - vlan:
-              base-iface: "bond1"
-              id: 402
-            ipv4:
-              address:
-                prefix-length: "26"
-                ip: "192.168.1.1"
-              enabled: true
-            ipv6:
-              enabled: false
-            name: "bond1.402"
-            state: "up"
-            type: "vlan"
-            mtu: 9000
-          - ipv4:
-              enabled: false
-            ipv6:
-              enabled: false
-            name: "bond2"
-            description: "asdasdasfsdgdfgsdfsdf"
-            state: "up"
-            type: "bond"
-            mtu: 9000
-          - vlan:
-              base-iface: "bond2"
-              id: 403
-            ipv4:
-              address:
-                prefix-length: "28"
-                ip: "192.168.1.1"
-              enabled: true
-            ipv6:
-              enabled: false
-            name: "bond2.403"
             state: "up"
             type: "vlan"
             mtu: 9000
