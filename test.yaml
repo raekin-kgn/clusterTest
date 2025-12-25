@@ -1,0 +1,134 @@
+---
+vnf:
+  name: ribbon
+  namespace: default
+  sourceType: heat
+  labels:
+    app: "ribbon-sbc"
+    vendor: "ribbon"
+    version: "1.0.0"
+    environment: "production"
+  annotations:
+    vnf.odine.com/description: "Ribbon SBC VNF deployment from Heat template"
+vnfPackage:
+  enabled: true
+  name: ribbon.zip
+  packageFormat: heat
+  selectedServices:
+  - isbc.yaml
+  topology:
+    resources:
+    - name: CAP-RIBBON-SBC-FIXED-ISBC1
+      type: VirtualMachine
+      properties:
+        image: 
+        flavorRef: ribbon_EMS
+        userData: "#cloud-config\nusers:\n  - name: linuxadmin\n    plain_text_passwd:
+          sonus\n    lock_passwd: false\n    ssh-authorized-keys:\n      - ssh-rsa
+          AAAAB3NzaC1yc2EAAAADAQABAAABAQDpl1oweEvGHDPYGXaRhYm6rnKRlXkqjCbaYwLe+Lk289gp61Ny9NOkOy8mI0YKtAW6bIryhozTvlWs9fcQk71SnJ0GVdayn9PXPfASh7dCGMsiHrL3E/WulpdatYlmMNQf3AiLzDRe88K28hLKAVPtJGjBGST9j/eXSZReniLOKIbo803wqoeLsHukM39Dik9Af+kTgzbmdSb6maDbwKI1MtSZ1bqEmEGgTamVvADgH+K3xdB+eYbD9mhdBqAK+x/3ZgPay7LZhyCIQqNGLzv0qdzVn9zTiPNgFpRLrQg13brCu5n6WXkT2zk0U4H+74KefvtrXDvGvQ8SVZ3PE/uz
+          Generated-by-Nova\n  - name: admin\n    plain_text_passwd: admin\n    lock_passwd:
+          false\n    ssh-authorized-keys:\n      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpl1oweEvGHDPYGXaRhYm6rnKRlXkqjCbaYwLe+Lk289gp61Ny9NOkOy8mI0YKtAW6bIryhozTvlWs9fcQk71SnJ0GVdayn9PXPfASh7dCGMsiHrL3E/WulpdatYlmMNQf3AiLzDRe88K28hLKAVPtJGjBGST9j/eXSZReniLOKIbo803wqoeLsHukM39Dik9Af+kTgzbmdSb6maDbwKI1MtSZ1bqEmEGgTamVvADgH+K3xdB+eYbD9mhdBqAK+x/3ZgPay7LZhyCIQqNGLzv0qdzVn9zTiPNgFpRLrQg13brCu5n6WXkT2zk0U4H+74KefvtrXDvGvQ8SVZ3PE/uz
+          Generated-by-Nova\nruncmd:\n  - sed -i '/^AllowUsers/ s/$/ osuser/' /etc/ssh/sshd_config\n
+          \ - service ssh restart    \n  - echo \"y\" | enableSsh\n\nwrite_files:\n-
+          \  content: |\n        {\n          \"CEName\"                   : \"CAP-RIBBON-SBC-FIXED-ISBC1\",\n
+          \         \"CEMode\"                   : \"sbc\",\n          \"SystemName\"
+          \              : \"SBCPROD-N0-RG1\",\n          \"SbcPersonalityType\"       :
+          \"isbc\",\n          \"SbcHaMode\"                : \"Nto1\",\n          \"EmsUsername\"
+          \             : \"restuser\",\n          \"EmsPassword\"              :
+          \"sonus123\",\n          \"EmsIP\"                    : [ \"10.212.246.16\",
+          \"10.212.246.16\" ],\n          \"EmsDownloadConfig\"        : \"true\",\n
+          \         \"OamIP\"                    : [ \"10.212.247.198\", \"10.212.247.199\"
+          ],\n          \"CERole\"                   : \"ACTIVE\",\n          \"TemplateName\"
+          \            : \"heatRgNoDhcpDualStack.yaml\",\n          \"TemplateVersion\"
+          \         : \"V08.00.00A020\",\n          \"EmsPrivateNodeParameters\" :
+          { \"cluster_id\": \"SBCCAP-N0-RG1\",\"vnfc_id\":\"-SBCCAP-N0-RG1-1\"}\n
+          \       }\n    path: /opt/sonus/conf/userData.json\n    \n#bootcmd:\n#-
+          \  /opt/sonus/bin/mountVolume.sh -v \"$cinderVolumeId\"                    \n"
+        networks:
+        - network: mgt0-isbc
+    - name: mgt0-isbc
+      type: Network
+      properties:
+        networkRef: Ribbon_Fixed_Management
+        ipAddress: 10.212.246.11
+        cidr: 10.212.246.11/24
+        gateway: 10.212.246.1
+        dhcp: false
+    - name: Security_groupv4_isbc
+      type: SecurityGroup
+      properties:
+        description: ISBC v4 Security Policy
+        name: ISBC-SEC_GRP-V4-
+        rules:
+        - direction: ingress
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: ICMP
+          ethertype: IPv4
+        - direction: egress
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: ICMP
+          ethertype: IPv4
+        - direction: ingress
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: TCP
+          ethertype: IPv4
+        - direction: egress
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: TCP
+          ethertype: IPv4
+        - direction: ingress
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: UDP
+          ethertype: IPv4
+        - direction: egress
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: UDP
+          ethertype: IPv4
+    - name: cinder_boot_isbc
+      type: Storage
+      properties:
+        description: 
+        image: sbc-V10.01.06R001
+        size: 80
+        volume_type: __DEFAULT__
+flavorProfile:
+  enabled: true
+  name: ribbon.zip-flavors
+  flavors:
+  - name: ribbon_EMS
+    vcpus: 2
+    memory: 4Gi
+    disk: 20Gi
+validation:
+  enabled: true
+  validateFlavors: true
+  validateNetworks: true
+  validateTopology: true
+  strictMode: true
+  allowOverride: false
+resources:
+  defaults:
+    requests:
+      memory: 2Gi
+      cpu: '1'
+    limits:
+      memory: 4Gi
+      cpu: '2'
+storage:
+  storageClass: standard
+  defaultSize: 20Gi
+networking:
+  nadEnabled: true
+  nadTemplate: bridge
+security:
+  enabled: true
+  podSecurityContext:
+    fsGroup: 107
+    runAsNonRoot: false
+  securityContext:
+    privileged: false
+monitoring:
+  enabled: true
+  port: 9090
+  createServiceMonitor: true
+---
