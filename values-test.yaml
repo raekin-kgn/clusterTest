@@ -4,8 +4,12 @@ vnf:
   namespace: default
   sourceType: heat
   labels:
-    app: ribbon.zip
-  annotations: 
+    app: "ribbon-sbc"
+    vendor: "ribbon"
+    version: "1.0.0"
+    environment: "production"
+  annotations:
+    vnf.odine.com/description: "Ribbon SBC VNF deployment from Heat template"
 vnfPackage:
   enabled: true
   name: ribbon.zip
@@ -127,3 +131,4 @@ monitoring:
   enabled: true
   port: 9090
   createServiceMonitor: true
+---
