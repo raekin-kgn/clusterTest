@@ -11,7 +11,7 @@ spec:
   pullSecretRef:
     name: "key-reference/"
   clusters:
-  - clusterName: "kaan-tamer-cluster"
+  - clusterName: "cluster-test-instance"
     extraManifestPath: "/path"
     extraManifests:
       filter:
