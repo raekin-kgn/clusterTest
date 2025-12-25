@@ -2,8 +2,8 @@
 apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
-  name: "kaan-tamer-cluster"
-  namespace: "kaan-tamer-cluster-instance"
+  name: "gitlab-test-cluster"
+  namespace: "cluster-instance"
 spec:
   baseDomain: "test.com"
   clusterImageSetNameRef: "cluste-img-1"
