@@ -11,7 +11,7 @@ spec:
   pullSecretRef:
     name: "key-reference/"
   clusters:
-  - clusterName: "cluster-test-instance"
+  - clusterName: "gitlab-test-cluster"
     extraManifestPath: "/path"
     extraManifests:
       filter:
@@ -33,69 +33,57 @@ spec:
     additionalNTPSources:
     - "192.168.1.0"
     nodes:
-    - hostName: "test.com"
+    - hostName: ""
       role: "worker"
-      bmcAddress: "192.168.1.0"
+      bmcAddress: "192.168.65.3"
       bmcCredentialsName:
-        name: "bmc-seceet"
-      nodeLabels:
-        openshift-storage: "true"
-        mode: "cnf"
-      bootMode: "UEFISecureBoot"
+        name: "bmc-credentials-0"
+      nodeLabels: {}
+      bootMode: "UEFI"
       rootDeviceHints:
-        vendor: "Avago"
-        deviceName: "/dev/sda"
-        size: 90
-      bootMACAddress: "40:A6:B7:88:84:5C"
+        vendor: "Red Hat VirtIO"
+        deviceName: ""
+        size: 0
+      bootMACAddress: "AA:3F:92:1B:C4:7E"
       nodeNetwork:
         interfaces:
-        - name: "ens01"
-          macAddress: "40:A6:B7:88:84:5C"
+        - name: "ens1f0"
+          macAddress: "04:32:01:52:74:70"
+        - name: "ens1f1"
+          macAddress: "04:32:01:52:74:71"
+        - name: "ens2f0"
+          macAddress: "C4:CB:E1:B5:89:01"
         config:
           interfaces:
           - ipv4:
               enabled: false
             ipv6:
               enabled: false
-            name: "ens01"
+            name: "ens1f0"
             state: "up"
             type: "ethernet"
             mtu: 9000
           - ipv4:
               enabled: false
-            link-aggregation:
-              mode: "balance-rr"
-              port:
-              - "ens01: 40:A6:B7:88:84:5C"
-              options:
-                miimon: "100"
             ipv6:
               enabled: false
-            name: "bond1"
-            description: "bond1"
+            name: "ens1f1"
             state: "up"
-            type: "bond"
+            type: "ethernet"
             mtu: 9000
-          - vlan:
-              base-iface: "bond1"
-              id: 401
-            ipv4:
-              address:
-                prefix-length: "24"
-                ip: "192.168.1.1"
-              enabled: true
+          - ipv4:
+              enabled: false
             ipv6:
               enabled: false
-            name: "bond1.401"
+            name: "ens2f0"
             state: "up"
-            type: "vlan"
-            mtu: 9000
+            type: "ethernet"
+            mtu: 75000
           dns-resolver:
             config:
-              server:
-              - "7.7.7.7"
+              server: []
           routes:
             config:
-            - next-hop-interface: "bond1.401"
+            - next-hop-interface: ""
               destination: "0.0.0.0/0"
-              next-hop-address: "192.168.1.1"
+              next-hop-address: ""
