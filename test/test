@@ -1,0 +1,61 @@
+---
+apiVersion: "ran.openshift.io/v1"
+kind: "SiteConfig"
+metadata:
+  name: "test"
+  namespace: "test"
+spec:
+  baseDomain: "test"
+  clusterImageSetNameRef: "test"
+  sshPublicKey: "test"
+  pullSecretRef:
+    name: "test"
+  clusters:
+  - clusterName: "test"
+    extraManifestPath: "test"
+    extraManifests:
+      filter:
+        inclusionDefault: "exclude"
+        include:
+        - "test"
+    networkType: "OVNKubernetes"
+    clusterLabels:
+      test: "tst"
+    clusterNetwork:
+    - cidr: "test"
+      hostPrefix: 24
+    machineNetwork:
+    - cidr: "test"
+    apiVIP: "test"
+    ingressVIP: "test"
+    serviceNetwork:
+    - "test"
+    additionalNTPSources:
+    - "test"
+    nodes:
+    - hostName: "test"
+      role: "master"
+      bmcAddress: "test"
+      bmcCredentialsName:
+        name: "test"
+      nodeLabels:
+        test: "test"
+      bootMode: "UEFI"
+      rootDeviceHints:
+        vendor: "Unknown"
+        deviceName: "test"
+        size: 0
+      bootMACAddress: "test"
+      nodeNetwork:
+        interfaces: []
+        config:
+          interfaces: []
+          dns-resolver:
+            config:
+              server:
+              - "test"
+          routes:
+            config:
+            - next-hop-interface: ""
+              destination: "0.0.0.0/0"
+              next-hop-address: ""
