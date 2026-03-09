@@ -3,7 +3,7 @@ apiVersion: "ran.openshift.io/v1"
 kind: "SiteConfig"
 metadata:
   name: "anucp-cluster2"
-  namespace: "odine2"
+  namespace: "aabb"
 spec:
   baseDomain: "odine.com"
   clusterImageSetNameRef: "exampleImageRef"
@@ -42,7 +42,7 @@ spec:
         mode: "master"
       bootMode: "UEFI"
       rootDeviceHints:
-        vendor: "Western Digital"
+        vendor: "HP"
         deviceName: "dev/sda"
         size: 500
       bootMACAddress: "9e:8e:6d:9c:23:53"
